@@ -62,7 +62,12 @@ return {
     ["<leader>lj"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Goto Next diagnostic" },
 
     --
-    ["gM"] = { function() fn.copy_last_git_msg() end, desc = "Copy git" }
+    ["gM"] = { function() fn.copy_last_git_msg() end, desc = "Copy git" },
+
+    -- wiki
+    ["\\ww"] = { "<cmd>VimwikiIndex<cr>", desc = "vim wiki index" },
+    ["\\wt"] = { "<cmd>VimwikiTabIndex<cr>", desc = "vim wiki tab index" },
+
   },
   t = {
     -- setting a mapping to false will disable it
