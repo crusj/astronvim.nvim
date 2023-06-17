@@ -61,7 +61,6 @@ return {
         config = true,
     },
 
-
     {
         'tzachar/highlight-undo.nvim',
         config = function()
@@ -78,6 +77,7 @@ return {
 
     {
         "vimwiki/vimwiki",
+        event = "BufEnter *.wiki",
         keys = {
             { "\\ww", mode = { "n" } },
         },
