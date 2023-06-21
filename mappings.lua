@@ -68,6 +68,13 @@ return {
     ["\\ww"] = { "<cmd>VimwikiIndex<cr>", desc = "vim wiki index" },
     ["\\wt"] = { "<cmd>VimwikiTabIndex<cr>", desc = "vim wiki tab index" },
 
+    -- window
+    ["c-j"] = { "<cmd>wincmd j<cr>", desc = "window down" },
+    ["c-k"] = { "<cmd>wincmd k<cr>", desc = "window up" },
+    ["c-l"] = { "<cmd>wincmd l<cr>", desc = "window right" },
+    ["c-h"] = { "<cmd>wincmd h<cr>", desc = "window left" },
+
+
   },
   t = {
     -- setting a mapping to false will disable it
