@@ -143,6 +143,18 @@ return {
             })
             vim.keymap.set("n", " rh", "<Plug>RestNvim<cr>", {})
         end
+    },
+    {
+        "simrat39/inlay-hints.nvim",
+        lazy = false,
+        config = function()
+            require("inlay-hints").setup({
+                only_current_line = true,
+                eol = {
+                    right_align = true,
+                }
+            })
+        end
     }
 
 }
