@@ -74,6 +74,9 @@ return {
     ["c-l"] = { "<cmd>wincmd l<cr>", desc = "window right" },
     ["c-h"] = { "<cmd>wincmd h<cr>", desc = "window left" },
 
+    -- rust
+    [" r"] = { "<cmd>RustHoverActions<cr>", desc = "rust hover actions" }
+
 
   },
   t = {
