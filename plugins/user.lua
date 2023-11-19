@@ -9,7 +9,16 @@ return {
             require("lsp_signature").setup()
         end,
     },
-
+    {
+        "neovim/nvim-lspconfig",
+        init_options = {
+              userLanguages = {
+                eelixir = "html-eex",
+                eruby = "erb",
+                rust = "html",
+            },
+        },
+    },
     {
         'phaazon/hop.nvim',
         lazy = false,
@@ -88,7 +97,7 @@ return {
         keys = {
             { "  ", mode = { "n" } },
         },
-        branch = 'main',
+        branch = 'feature/fix',
         dependencies = { 'nvim-web-devicons' },
         config = function()
             require("bookmarks").setup({
@@ -96,6 +105,10 @@ return {
                     toggle = "  ", -- Toggle bookmarks
                     order = "O",
                 },
+                fix_enable = false,
+                preview_ext_enable = true,
+                sign_icon = "󰃃",
+                width = 0.95,
             })
             require("telescope").load_extension("bookmarks")
         end
