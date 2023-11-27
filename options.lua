@@ -9,6 +9,7 @@ return {
     wrap = false,          -- sets vim.opt.wrap
     tabstop = 4,
     shiftwidth = 4,
+    background = "dark",
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader

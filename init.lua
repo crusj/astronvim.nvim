@@ -1,3 +1,5 @@
+vim.g.neovide_remember_window_size = true
+
 return {
   -- Configure AstroNvim updates
   updater = {
@@ -18,7 +20,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "kanagawa-wave",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -44,13 +46,12 @@ return {
         --  "lua_ls",
       },
       timeout_ms = 1000, -- default format timeout
-      -- filter = function(client) -- fully override the default formatting function
-      --   return true
+      -- filter = function(client) -- fully override the default formatting function return true
       -- end
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+       "gopls"
     },
     setup_handlers = {
       rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end

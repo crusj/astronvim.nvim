@@ -79,12 +79,6 @@ return {
     },
 
     {
-        'p00f/nvim-ts-rainbow',
-        event = 'User AstroFile',
-        lazy = false,
-    },
-
-    {
         "vimwiki/vimwiki",
         lazy = false,
         keys = {
@@ -97,7 +91,7 @@ return {
         keys = {
             { "  ", mode = { "n" } },
         },
-        branch = 'feature/fix',
+        branch = 'main',
         dependencies = { 'nvim-web-devicons' },
         config = function()
             require("bookmarks").setup({
@@ -109,14 +103,19 @@ return {
                 preview_ext_enable = true,
                 sign_icon = "󰃃",
                 width = 0.95,
+                virt_pattern = {"*.go","*.rs","*.sh","*.lua","*.http"}
             })
             require("telescope").load_extension("bookmarks")
+            vim.cmd([[
+                hi link bookmarks_virt_text Comment
+            ]])
         end
     },
     {
         "rest-nvim/rest.nvim",
         ft = "http",
         dependencies = { "plenary.nvim" },
+        commit = "8b62563",
         config = function()
             require("rest-nvim").setup({
                 -- Open request results in a horizontal split
@@ -168,6 +167,10 @@ return {
                 }
             })
         end
-    }
+    },
+    {
+        "rebelot/kanagawa.nvim",
+        lazy = false,
 
+    }
 }
