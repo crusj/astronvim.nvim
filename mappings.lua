@@ -64,16 +64,32 @@ return {
     --
     ["gM"] = { function() fn.copy_last_git_msg() end, desc = "Copy git" },
 
-    -- wiki
-    ["\\ww"] = { "<cmd>VimwikiIndex<cr>", desc = "vim wiki index" },
-    ["\\wt"] = { "<cmd>VimwikiTabIndex<cr>", desc = "vim wiki tab index" },
+    ["<C-0>"] = { "<cmd>vertical resize -10<cr>", desc = "Decrease window width" },
+    ["<C-9>"] = { "<cmd>vertical resize +10<cr>", desc = "Increase window width" },
 
-    -- window
-    ["c-j"] = { "<cmd>wincmd j<cr>", desc = "window down" },
-    ["c-k"] = { "<cmd>wincmd k<cr>", desc = "window up" },
-    ["c-l"] = { "<cmd>wincmd l<cr>", desc = "window right" },
-    ["c-h"] = { "<cmd>wincmd h<cr>", desc = "window left" },
-      
+    -- telescope
+    ["<leader>fw"] = {
+      function()
+        require("telescope.builtin").live_grep({
+          additional_args = function(args)
+            return vim.list_extend(args, { "-L" })
+          end,
+          glob_pattern = {
+            "!*.sum"
+          }
+        })
+      end,
+      desc = "Find words"
+    },
+    ["<leader>ff"] = {
+      function()
+        require("telescope.builtin").find_files({
+          follow = true,
+        })
+      end,
+      desc = "Find files"
+    },
+    ["<C-k>"] = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
 
     -- rust
     [" r"] = { "<cmd>RustHoverActions<cr>", desc = "rust hover actions" }

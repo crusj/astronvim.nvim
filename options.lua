@@ -10,6 +10,10 @@ return {
     tabstop = 4,
     shiftwidth = 4,
     background = "dark",
+    scrolloff = 25,
+    sidescrolloff = 25,
+
+
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
