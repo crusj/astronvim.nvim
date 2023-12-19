@@ -1,0 +1,51 @@
+set nu
+set relativenumber
+set surround
+set commentary
+set easymotion
+set NERDTree
+set sneak
+set ignorecase
+set smartcase
+set which-key
+set quickscope
+set timeoutlen=5000
+set scrolloff=25
+set sidescrolloff=25
+set termencoding=utf-8
+set encoding=utf-8
+set showmode=true
+set ideavimsupport="dialog"
+let g:EasyMotion_do_mapping = 0
+let g:qs_primary_color = '#5da8d3'
+let g:qs_secondary_color = '#fb2a55'
+let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+map fwk <Plug>(easymotion-b)
+map fwj <Plug>(easymotion-w)
+map fwl <Plug>(easymotion-wl)
+map flk <Plug>(easymotion-k)
+map flj <Plug>(easymotion-j)
+map <space>k gt
+map <space>j gT
+map <space>f <Action>(GotoFile)
+map <space>s <Action>(GotoSymbol)
+map <space>g <Action>(FindInPath)
+map <space>e <Action>(Switcher)
+map <C-h> <Action>(ActivateProjectToolWindow)
+map gf <Action>(ReformatCode)
+map ga <Action>(ShowIntentionActions)
+map <space>lj <Action>(GotoNextError)
+map <space>lk <Action>(GotoPreviousError)
+map <C-k> <Action>(ShowErrorDescription)
+map <leader>a <Action>(ActivateTerminalToolWindow)
+map gr <Action>(FindUsages)
+map <space>a <Action>(RenameElement)
+map <space>i <Action>(MethodUp)
+map <space>o <Action>(MethodDown)
+map <space><space> <Action>(FileStructurePopup)
+map <Tab><Tab> <Action>(ActivateBookmarksToolWindow)
+map \\z <Action>(ToggleBookmark)
+map \\e <Action>(RecentFiles)
+map \\t <Action>(RunClass)
+map <space>h <Action>(HideActiveWindow)
