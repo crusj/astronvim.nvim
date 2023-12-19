@@ -33,14 +33,10 @@ return {
     ["fwl"] = { "<cmd>HopWordCurrentLine<cr>" },
     ["fwj"] = { "<cmd>HopWordAC<cr>" },
     ["fwk"] = { "<cmd>HopWordBC<cr>" },
-    ["fll"] = { "<cmd>HopLine>" },
+    ["fll"] = { "<cmd>HopChar2CurrentLine<cr>" },
     ["flk"] = { "<cmd>HopLineBC<cr>" },
     ["flj"] = { "<cmd>HopLineAC<cr>" },
     ["flm"] = { "<cmd>HopLineMW<cr>" },
-    ["fcl"] = { "<cmd>HopChar1CurrentLine<cr>" },
-    ["fcc"] = { "<cmd>HopChar1<cr>" },
-    ["fcj"] = { "<cmd>HopChar1AC<cr>" },
-    ["fck"] = { "<cmd>HopChar1BC<cr>" },
 
 
     -- terminal
