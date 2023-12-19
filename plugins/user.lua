@@ -172,14 +172,5 @@ return {
         "rebelot/kanagawa.nvim",
         lazy = false,
 
-    },
-    {
-        "j-hui/fidget.nvim",
-        lazy = false,
-        config = function()
-            require("fidget").setup {
-              -- options
-            }
-        end
     }
 }
