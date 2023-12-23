@@ -37,6 +37,7 @@ return {
     ["flk"] = { "<cmd>HopLineBC<cr>" },
     ["flj"] = { "<cmd>HopLineAC<cr>" },
     ["flm"] = { "<cmd>HopLineMW<cr>" },
+    ["gf"] = { "<cmd>Format<cr>", desc = "Format Buffer" },
 
 
     -- terminal

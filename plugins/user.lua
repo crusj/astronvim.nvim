@@ -12,7 +12,7 @@ return {
     {
         "neovim/nvim-lspconfig",
         init_options = {
-              userLanguages = {
+            userLanguages = {
                 eelixir = "html-eex",
                 eruby = "erb",
                 rust = "html",
@@ -56,7 +56,7 @@ return {
         event = 'InsertEnter',
         config = function()
             -- Change '<C-g>' here to any keycode you like.
-            vim.keymap.set('i', '<c-o>', function() return vim.fn['codeium#Accept']() end, { expr = true,silent = true })
+            vim.keymap.set('i', '<c-o>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
             vim.keymap.set('i', '<c-j>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
             vim.keymap.set('i', '<c-k>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
             vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
@@ -79,14 +79,6 @@ return {
     },
 
     {
-        "vimwiki/vimwiki",
-        lazy = false,
-        keys = {
-            { "\\ww", mode = { "n" } },
-        },
-    },
-
-    {
         'crusj/bookmarks.nvim',
         keys = {
             { "  ", mode = { "n" } },
@@ -103,7 +95,7 @@ return {
                 preview_ext_enable = true,
                 sign_icon = "󰃃",
                 width = 0.95,
-                virt_pattern = {"*.go","*.rs","*.sh","*.lua","*.http"}
+                virt_pattern = { "*.go", "*.rs", "*.sh", "*.lua", "*.http" }
             })
             require("telescope").load_extension("bookmarks")
             vim.cmd([[
@@ -171,6 +163,22 @@ return {
     {
         "rebelot/kanagawa.nvim",
         lazy = false,
-
+    },
+    {
+        'mvllow/modes.nvim',
+        tag = 'v0.2.1',
+        dependencies = { 'rebelot/kanagawa.nvim' },
+        event = { "ColorScheme" },
+        config = function()
+            require('modes').setup {
+                colors = {
+                    copy = "#f5c359",
+                    delete = "#c75c6a",
+                    insert = "#78ccc5",
+                    visual = "#9745be",
+                },
+                line_opacity = 0.15,
+            }
+        end
     }
 }

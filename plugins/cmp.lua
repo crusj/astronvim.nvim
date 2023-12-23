@@ -4,14 +4,14 @@ local has_words_before = function()
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-return  { -- override nvim-cmp plugin
-      "hrsh7th/nvim-cmp",
-      -- override the options table that is used in the `require("cmp").setup()` call
-      dependencies = { 'nvim-web-devicons' },
-      opts = function(_, opts)
+local cmp = require "cmp"
+return {  -- override nvim-cmp plugin
+    "hrsh7th/nvim-cmp",
+    -- override the options table that is used in the `require("cmp").setup()` call
+    dependencies = { 'nvim-web-devicons' },
+    opts = function(_, opts)
         -- opts parameter is the default options table
         -- the function is lazy loaded so cmp is able to be required
-        local cmp = require "cmp"
         -- modify the mapping part of the table
         opts.mapping = {
             ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
@@ -62,6 +62,5 @@ return  { -- override nvim-cmp plugin
         }
 
         return opts
-      end
- }
-
+    end
+}
