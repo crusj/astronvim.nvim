@@ -175,9 +175,9 @@ return {
                     copy = "#f5c359",
                     delete = "#c75c6a",
                     insert = "#78ccc5",
-                    visual = "#9745be",
+                    visual = "#c75c8a",
                 },
-                line_opacity = 0.15,
+                line_opacity = 0.1,
             }
         end
     }

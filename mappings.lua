@@ -89,7 +89,8 @@ return {
     ["<C-k>"] = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
 
     -- rust
-    [" r"] = { "<cmd>RustHoverActions<cr>", desc = "rust hover actions" }
+    [" r"] = { "<cmd>RustHoverActions<cr>", desc = "Rust hover actions" },
+    [" n"] = { "<cmd>Navbuddy<cr>", desc = "Nav buddy" }
 
 
   },
