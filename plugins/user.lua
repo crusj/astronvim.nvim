@@ -23,9 +23,15 @@ return {
         'phaazon/hop.nvim',
         lazy = false,
         keys = {
-            { "fwl", mode = { "n" } },
-            { "fwk", mode = { "n" } },
-            { "fwj", mode = { "n" } },
+            { "fww", "<cmd>HopWord<cr>",             mode = { "n" }, desc = "HopWord" },
+            { "fwl", "<cmd>HopWordCurrentLine<cr>",  mode = { "n" }, desc = "HopWordCurrentLine" },
+            { "fwj", "<cmd>HopWordAC<cr>",           mode = { "n" }, desc = "HopWordAC" },
+            { "fwk", "<cmd>HopWordBC<cr>",           mode = { "n" }, desc = "HopWordBC" },
+            { "fll", "<cmd>HopChar2CurrentLine<cr>", mode = { "n" }, desc = "HopChar2CurrentLine" },
+            { "flk", "<cmd>HopLineBC<cr>",           mode = { "n" }, desc = "HopLineBC" },
+            { "flj", "<cmd>HopLineAC<cr>",           mode = { "n" }, desc = "HopLineAC" },
+            { "flm", "<cmd>HopLineMW<cr>",           mode = { "n" }, desc = "HopLineMW" },
+
         },
         branch = 'v1', -- optional but strongly recommended
         config = function()
@@ -37,17 +43,13 @@ return {
     {
         "sindrets/diffview.nvim",
         keys = {
-            { "\\do", mode = { "n" } },
-            { "\\d1", mode = { "n" } },
-            { "\\dc", mode = { "n" } },
-            { "\\dh", mode = { "n" } }
+            { "\\do", "<cmd>DiffviewOpen<cr>",        mode = { "n" }, desc = "DiffviewOpen" },
+            { "\\d1", "<cmd>DiffviewOpen HEAD~1<cr>", mode = { "n" }, desc = "DiffviewOpen HEAD~1" },
+            { "\\dc", "<cmd>DiffviewClose<cr>",       mode = { "n" }, desc = "DiffviewClose" },
+            { "\\dh", "<cmd>DiffviewFileHistory<cr>", mode = { "n" }, desc = "DiffviewFileHistory" },
         },
         config = function()
             require("diffview").setup {}
-            vim.keymap.set("n", "\\do", "<cmd>DiffviewOpen<cr>", {})
-            vim.keymap.set("n", "\\d1", "<cmd>DiffviewOpen HEAD~1<cr>", {})
-            vim.keymap.set("n", "\\dc", "<cmd>DiffviewClose<cr>", {})
-            vim.keymap.set("n", "\\dh", "<cmd>DiffviewFileHistory<cr>", {})
         end
     },
 
@@ -80,7 +82,7 @@ return {
     {
         'crusj/bookmarks.nvim',
         keys = {
-            { "  ", mode = { "n" } },
+            { "  ", mode = { "n" }, desc = "ToggleBookmarks" },
         },
         branch = 'main',
         dependencies = { 'nvim-web-devicons' },

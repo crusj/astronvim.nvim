@@ -28,15 +28,6 @@ return {
     ["zf"] = { "<cmd>?^func<cr>", desc = "Goto func head" },
     ["\\"] = false,
 
-    -- hop
-    ["fww"] = { "<cmd>HopWord<cr>" },
-    ["fwl"] = { "<cmd>HopWordCurrentLine<cr>" },
-    ["fwj"] = { "<cmd>HopWordAC<cr>" },
-    ["fwk"] = { "<cmd>HopWordBC<cr>" },
-    ["fll"] = { "<cmd>HopChar2CurrentLine<cr>" },
-    ["flk"] = { "<cmd>HopLineBC<cr>" },
-    ["flj"] = { "<cmd>HopLineAC<cr>" },
-    ["flm"] = { "<cmd>HopLineMW<cr>" },
     ["gf"] = { "<cmd>Format<cr>", desc = "Format Buffer" },
 
 
