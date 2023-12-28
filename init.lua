@@ -1,5 +1,46 @@
 return {
   -- Configure AstroNvim updates
+  icons = {
+    VimIcon = "",
+    ScrollText = "",
+    GitBranch = "",
+    GitAdd = "",
+    GitChange = "",
+    GitDelete = "",
+  },
+
+  heirline = {
+    -- define the separators between each section
+    separators = {
+      left = { "", " " }, -- separator for the left side of the statusline
+      right = { " ", "" }, -- separator for the right side of the statusline
+      tab = { "", "" },
+    },
+    -- add new colors that can be used by heirline
+    colors = function(hl)
+      local get_hlgroup = require("astronvim.utils").get_hlgroup
+      -- use helper function to get highlight group properties
+      hl.git_branch_fg = get_hlgroup("DiagnosticsOk").fg
+      hl.git_added = get_hlgroup("GitSignsAdd").fg
+      hl.git_changed = get_hlgroup("GitSignsChange").fg
+      hl.git_removed = get_hlgroup("GitSignsDelete").fg
+      hl.blank_bg = get_hlgroup("Folded").fg
+      hl.file_info_bg = get_hlgroup("Visual").bg
+      hl.nav_icon_bg = get_hlgroup("String").fg
+      hl.nav_fg = hl.nav_icon_bg
+      hl.folder_icon_bg = get_hlgroup("Error").fg
+      return hl
+    end,
+    attributes = {
+      mode = { bold = true },
+    },
+    icon_highlights = {
+      file_icon = {
+        statusline = false,
+      },
+    },
+  },
+
   updater = {
     remote = "origin",     -- remote to use
     channel = "stable",    -- "stable" or "nightly"
@@ -16,7 +57,6 @@ return {
       --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
     },
   },
-
   -- Set colorscheme to use
   colorscheme = "kanagawa-wave",
 
