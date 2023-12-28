@@ -3,6 +3,7 @@ return {
   event = "BufEnter",
   opts = function(_, opts)
     local status = require("astronvim.utils.status")
+    opts.winbar = nil
     opts.statusline = {
       -- default highlight for the entire statusline
       hl = { fg = "fg", bg = "bg" },

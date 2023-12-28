@@ -1,10 +1,10 @@
 local utils = require "astronvim.utils"
-local maps = require("astronvim.utils").empty_map_table()
 return {
-	{
-		'edolphin-ydf/goimpl.nvim',
-		ft = "go",
-        keys = { "<space>im" },
+    {
+        'edolphin-ydf/goimpl.nvim',
+        keys = {
+            { "<space>im", "<cmd>lua require'telescope'.extensions.goimpl.goimpl{}<CR>", desc = "goimpl" }
+        },
         dependencies = {
             { 'nvim-lua/plenary.nvim' },
             { 'nvim-lua/popup.nvim' },
@@ -12,8 +12,6 @@ return {
         },
         config = function()
             require 'telescope'.load_extension 'goimpl'
-            maps.n["<leader>im"] = {"<cmd>lua require'telescope'.extensions.goimpl.goimpl{}<CR>", desc = "[go] goimpl"}
-            utils.set_mappings(astronvim.user_opts("mappings", maps))
         end,
-	}
+    }
 }
